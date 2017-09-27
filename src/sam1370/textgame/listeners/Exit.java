@@ -2,28 +2,28 @@ package sam1370.textgame.listeners;
 
 import sam1370.textgame.*;
 
-public class Info implements CommandListener {
+public class Exit implements CommandListener {
 
 	@Override
 	public String getCommand() {
-		return "info";
+		return "exit";
 	}
 
 	@Override
 	public String getDescription() {
-		return "Retrieve information about this game";
+		return "Exit the game";
 	}
 
 	@Override
 	public String[] getAliases() {
-		String[] aliases = { "information", "informat" };
+		String[] aliases = { "systemexit", "byebye", "bye" };
 		return aliases;
 	}
 
 	@Override
 	public void onCommand(String[] args) {
-		Utils.println("This TextGame was created by an 11-year-old kid named Sam with an"
-				+ " online name of Sam1370. Hope you enjoy the game!");
+		Program.g.windowClosing(null);
+		Program.g.windowClosed(null);
 	}
 
 	@Override

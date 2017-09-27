@@ -1,15 +1,15 @@
 package sam1370.textgame;
 
 public interface CommandListener {
-    String getCommand();
+	String getCommand();
 
-    String getDescription();
+	String getDescription();
 
-    String[] getAliases();
-    
-    String getUsage();
-    
-    Integer argsNeeded();
+	String[] getAliases();
 
-    void onCommand(String[] args);
+	String getUsage();
+
+	Integer argsNeeded();
+
+	void onCommand(String[] args);
 }
