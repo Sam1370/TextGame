@@ -22,19 +22,21 @@ public class Getaliases implements CommandListener {
 
     @Override
     public void onCommand(String[] args) {
-	    boolean unknownCommand = true;
+	boolean unknownCommand = true;
 	for (CommandListener cl : CommandInitiator.listeners) {
 	    if (CommandInitiator.identifyCommand(args[0], cl)) {
-		Utils.print(getCommand() + " aliases: ");
-		    for (String alias : cl.getAliases()) {
+		Utils.print("Aliases of " + getCommand() + ": ");
+		    for (int i = 0; i < cl.getAliases().length; i++) {
+			String alias = cl.getAliases()[i];
 			unknownCommand = false;
-			Utils.print(alias + ", ");
+			Utils.print(alias + (!(i + 1 < cl.getAliases().length) ? "" : ", "));
 		    }
 	    }
 	}
 	if (unknownCommand == true) {
-	    Utils.println();
 	    Utils.println("Command not found.");
+	} else {
+		Utils.println();
 	}
     }
 

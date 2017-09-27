@@ -26,7 +26,7 @@ public class Help implements CommandListener {
     public void onCommand(String[] args) {
 	Utils.println("--[ Help ]--");
 	Utils.println("Format: command | description");
-	Utils.println("Aliases are not listed here, use aliases [command] to get one");
+	Utils.println("Aliases are not listed here");
 	Utils.println();
 	List<CommandListener> listeners = CommandInitiator.listeners;
 	for (CommandListener cl : listeners) {

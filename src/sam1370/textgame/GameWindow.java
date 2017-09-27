@@ -29,10 +29,7 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 	frame.setBackground(bgColor);
 	frame.setForeground(fgColor);
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	Dimension frameSize = new Dimension((int) (screenSize.width / 2), (int) (screenSize.height / 2));
-	int x = (int) (frameSize.width / 2);
-	int y = (int) (frameSize.height / 2);
-	frame.setBounds(x, y, frameSize.width, frameSize.height);
+	frame.setBounds(0, 0, screenSize.width, screenSize.height);
 	textArea = new JTextArea();
 	textArea.setCaret(new NoTextSelectionCaret(textArea));
 	DefaultCaret caret = (DefaultCaret) textArea.getCaret();
