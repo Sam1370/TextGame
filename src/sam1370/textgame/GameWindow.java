@@ -3,8 +3,6 @@ package sam1370.textgame;
 import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
-
 import javax.swing.*;
 import javax.swing.text.*;
 
@@ -111,13 +109,6 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 		reader2 = new Thread(this);
 		reader2.setDaemon(true);
 		reader2.start();
-
-		// Invisible cursor
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		Point hotSpot = new Point(0, 0);
-		BufferedImage cursorImage = new BufferedImage(1, 1, BufferedImage.TRANSLUCENT);
-		Cursor invisibleCursor = toolkit.createCustomCursor(cursorImage, hotSpot, "InvisibleCursor");
-		frame.setCursor(invisibleCursor);
 	}
 	
 	public static String getInputFieldText() {

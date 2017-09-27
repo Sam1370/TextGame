@@ -16,7 +16,6 @@ public class Program {
 	private void registerListeners() {
 		registerListener(new Help());
 		registerListener(new Info());
-		registerListener(new Gluttonick());
 	}
 	
 	private void registerListener(EnterListener listener) {
