@@ -63,7 +63,7 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 
 			@Override
 			public void keyPressed(KeyEvent ke) {
-				EnterInitiator.keyPressed(ke);
+				CommandInitiator.keyPressed(ke);
 			}
 
 			@Override

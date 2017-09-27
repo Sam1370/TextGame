@@ -3,8 +3,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnterInitiator {
-	public static List<EnterListener> listeners = new ArrayList<EnterListener>();
+public class CommandInitiator {
+	public static List<CommandListener> listeners = new ArrayList<CommandListener>();
 	public static void keyPressed(KeyEvent ke) {
 		if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
 		    	String inputFieldText = GameWindow.getInputFieldText();
@@ -13,7 +13,7 @@ public class EnterInitiator {
 			fieldTextStrBuild.delete(0, 2);
 			String fieldTextFinal = fieldTextStrBuild.toString();
 			boolean unknownCommand = true;
-			for (EnterListener el : listeners) {
+			for (CommandListener el : listeners) {
 				if (fieldTextFinal.equalsIgnoreCase(el.getCommand())) {
 				    	unknownCommand = false;
 					el.enterPress();
@@ -25,7 +25,7 @@ public class EnterInitiator {
 			GameWindow.resetInputField();
 		}
 	}
-	public static void registerListener(EnterListener listener) {
+	public static void registerListener(CommandListener listener) {
 		listeners.add(listener);
 	}
 }

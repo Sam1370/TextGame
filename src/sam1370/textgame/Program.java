@@ -18,8 +18,8 @@ public class Program {
 		registerListener(new Info());
 	}
 	
-	private void registerListener(EnterListener listener) {
-		EnterInitiator.registerListener(listener);
+	private void registerListener(CommandListener listener) {
+		CommandInitiator.registerListener(listener);
 	}
 
 	private void main() {

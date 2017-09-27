@@ -4,7 +4,7 @@ import java.util.List;
 
 import sam1370.textgame.*;
 
-public class Help implements EnterListener {
+public class Help implements CommandListener {
 
 	@Override
 	public String getCommand() {
@@ -21,9 +21,9 @@ public class Help implements EnterListener {
 		Utils.println("--[ Help ]--");
 		Utils.println("Format: command | description");
 		Utils.println();
-		List<EnterListener> listeners = EnterInitiator.listeners;
-		for (EnterListener el : listeners) {
-			Utils.println(el.getCommand() + " | " + el.getDescription());
+		List<CommandListener> listeners = CommandInitiator.listeners;
+		for (CommandListener cl : listeners) {
+			Utils.println(cl.getCommand() + " | " + cl.getDescription());
 		}
 	}
 

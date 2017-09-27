@@ -2,7 +2,7 @@ package sam1370.textgame.listeners;
 
 import sam1370.textgame.*;
 
-public class Info implements EnterListener {
+public class Info implements CommandListener {
 
 	@Override
 	public String getCommand() {
