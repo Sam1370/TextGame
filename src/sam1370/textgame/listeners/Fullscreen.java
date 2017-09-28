@@ -16,7 +16,7 @@ public class Fullscreen implements CommandListener {
 
 	@Override
 	public String[] getAliases() {
-		String[] aliases = { "fullscr", "fullscreen" };
+		String[] aliases = { "fullscr", "fullsc", "fulls", "full" };
 		return aliases;
 	}
 

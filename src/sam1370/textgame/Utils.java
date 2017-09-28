@@ -23,4 +23,15 @@ public class Utils {
 			ex.printStackTrace();
 		}
 	}
+	
+	public static boolean opposite(boolean toBeTransformed) {
+		boolean newBoolean = toBeTransformed;
+		if (newBoolean == true) {
+			newBoolean = false; 
+		}
+		else {
+			newBoolean = true;
+		}
+		return newBoolean;
+	}
 }

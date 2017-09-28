@@ -28,26 +28,6 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 		frame = new JFrame("TextGame, by Sam1370");
 		frame.setBackground(bgColor);
 		frame.setForeground(fgColor);
-		frame.addKeyListener(new KeyListener() {
-
-			@Override
-			public void keyPressed(KeyEvent ke) {
-				if (ke.getKeyCode() == KeyEvent.VK_F11) {
-					fullscreen();
-				}
-			}
-
-			@Override
-			public void keyReleased(KeyEvent ke) {
-				
-			}
-
-			@Override
-			public void keyTyped(KeyEvent ke) {
-				
-			}
-			
-		});
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		Dimension frameSize = new Dimension((int) (screenSize.width / 2), (int) (screenSize.height / 2));
 		int x = (int) (frameSize.width / 2);
@@ -83,17 +63,18 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 
 			@Override
 			public void keyPressed(KeyEvent ke) {
+				if (ke.getKeyCode() == KeyEvent.VK_F11) {
+					fullscreen();
+				}
 				CommandInitiator.keyPressed(ke);
 			}
+			
+			@Override
+			public void keyReleased(KeyEvent ke) {}
 
 			@Override
-			public void keyReleased(KeyEvent ke) {
-			}
-
-			@Override
-			public void keyTyped(KeyEvent ke) {
-			}
-
+			public void keyTyped(KeyEvent ke) {}
+			
 		});
 
 		if (font != null) {
@@ -137,9 +118,15 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice gd = ge.getDefaultScreenDevice();
 		if (gd.isFullScreenSupported()) {
-			gd.setFullScreenWindow(frame);
+			if (gd.getFullScreenWindow() != null) {
+				gd.setFullScreenWindow(null);
+				Utils.println("Fullscreen deactivated");
+			} else {
+				gd.setFullScreenWindow(frame);
+				Utils.println("Fullscreen activated");
+			}
 		} else {
-			Utils.println("Fullscreen mode is not supported");
+			Utils.println("Fullscreen is not supported on this device");
 		}
 	}
 
