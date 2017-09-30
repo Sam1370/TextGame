@@ -22,7 +22,9 @@ public class Program {
 		registerCommand(new Fullscreen());
 		registerCommand(new Look());
 		
-		registerRoom(new Default());
+		Default defRm = new Default();
+		registerRoom(defRm);
+		Game.setRoom(defRm);
 	}
 	
 	private void registerRoom(Room room) {
