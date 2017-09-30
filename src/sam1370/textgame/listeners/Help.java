@@ -4,7 +4,7 @@ import java.util.List;
 
 import sam1370.textgame.*;
 
-public class Help implements CommandListener {
+public class Help implements Command {
 
 	@Override
 	public String getCommand() {
@@ -28,8 +28,8 @@ public class Help implements CommandListener {
 		Utils.println("Format: command | description");
 		Utils.println("Aliases are not listed here");
 		Utils.println();
-		List<CommandListener> listeners = CommandInitiator.listeners;
-		for (CommandListener cl : listeners) {
+		List<Command> listeners = CommandInitiator.listeners;
+		for (Command cl : listeners) {
 			Utils.println(cl.getUsage() + " | " + cl.getDescription());
 		}
 	}

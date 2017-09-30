@@ -1,8 +1,8 @@
 package sam1370.textgame;
 
 import sam1370.textgame.listeners.*;
-/* import java.io.File;
-import javax.sound.sampled.*; */
+import sam1370.textgame.rooms.*;
+
 
 public class Program {
 	public static GameWindow g;
@@ -15,14 +15,21 @@ public class Program {
 	}
 
 	private void registerListeners() {
-		registerListener(new Help());
-		registerListener(new Info());
-		registerListener(new Exit());
-		registerListener(new Getaliases());
-		registerListener(new Fullscreen());
+		registerCommand(new Help());
+		registerCommand(new Info());
+		registerCommand(new Exit());
+		registerCommand(new Getaliases());
+		registerCommand(new Fullscreen());
+		registerCommand(new Look());
+		
+		registerRoom(new Default());
+	}
+	
+	private void registerRoom(Room room) {
+		RoomInitiator.registerRoom(room);
 	}
 
-	private void registerListener(CommandListener listener) {
+	private void registerCommand(Command listener) {
 		CommandInitiator.registerListener(listener);
 	}
 

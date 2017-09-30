@@ -2,7 +2,7 @@ package sam1370.textgame.listeners;
 
 import sam1370.textgame.*;
 
-public class Getaliases implements CommandListener {
+public class Getaliases implements Command {
 
 	@Override
 	public String getCommand() {
@@ -23,7 +23,7 @@ public class Getaliases implements CommandListener {
 	@Override
 	public void onCommand(String[] args) {
 		boolean unknownCommand = true;
-		for (CommandListener cl : CommandInitiator.listeners) {
+		for (Command cl : CommandInitiator.listeners) {
 			if (CommandInitiator.identifyCommand(args[0], cl)) {
 				Utils.print("Aliases of " + getCommand() + ": ");
 				for (int i = 0; i < cl.getAliases().length; i++) {

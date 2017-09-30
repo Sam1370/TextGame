@@ -2,7 +2,7 @@ package sam1370.textgame.listeners;
 
 import sam1370.textgame.*;
 
-public class Fullscreen implements CommandListener {
+public class Fullscreen implements Command {
 
 	@Override
 	public String getCommand() {

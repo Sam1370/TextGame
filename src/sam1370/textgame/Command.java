@@ -1,6 +1,6 @@
 package sam1370.textgame;
 
-public interface CommandListener {
+public interface Command {
 	String getCommand();
 
 	String getDescription();

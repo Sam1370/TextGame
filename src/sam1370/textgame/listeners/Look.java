@@ -2,28 +2,28 @@ package sam1370.textgame.listeners;
 
 import sam1370.textgame.*;
 
-public class Exit implements Command {
+public class Look implements Command {
 
 	@Override
 	public String getCommand() {
-		return "exit";
+		return "look";
 	}
 
 	@Override
 	public String getDescription() {
-		return "Exit the game";
+		return "Look around and retrieve information";
 	}
 
 	@Override
 	public String[] getAliases() {
-		String[] aliases = { "systemexit", "byebye", "bye" };
+		String[] aliases = { "lookaround", "see" };
 		return aliases;
 	}
 
 	@Override
 	public void onCommand(String[] args) {
-		Program.g.windowClosing(null);
-		Program.g.windowClosed(null);
+		Utils.println(Game.currentRoom.getName());
+		Utils.println(Game.currentRoom.getLook());
 	}
 
 	@Override

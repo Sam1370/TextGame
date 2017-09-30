@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class CommandInitiator {
-	public static List<CommandListener> listeners = new ArrayList<CommandListener>();
+	public static List<Command> listeners = new ArrayList<Command>();
 
 	public static void keyPressed(KeyEvent ke) {
 		if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -19,7 +19,7 @@ public class CommandInitiator {
 			String cmdName = fieldTextSplit[0];
 			String[] cmdArgs = shiftArray(fieldTextSplit);
 			boolean unknownCommand = true;
-			for (CommandListener cl : listeners) {
+			for (Command cl : listeners) {
 				if (identifyCommand(cmdName, cl)) {
 					unknownCommand = false;
 					if (!cl.argsNeeded().equals(cmdArgs.length)) {
@@ -37,7 +37,7 @@ public class CommandInitiator {
 		}
 	}
 
-	public static boolean identifyCommand(String identification, CommandListener cl) {
+	public static boolean identifyCommand(String identification, Command cl) {
 		boolean identified = false;
 		if (cl.getCommand().equalsIgnoreCase(identification)) {
 			identified = true;
@@ -59,7 +59,7 @@ public class CommandInitiator {
 		return arrayNew;
 	}
 
-	public static void registerListener(CommandListener listener) {
+	public static void registerListener(Command listener) {
 		listeners.add(listener);
 	}
 }
