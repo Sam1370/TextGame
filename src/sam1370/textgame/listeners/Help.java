@@ -18,7 +18,7 @@ public class Help implements CommandListener {
 
 	@Override
 	public String[] getAliases() {
-		String[] aliases = { "helpme" };
+		String[] aliases = { "helpme", "hepl", "heplme" };
 		return aliases;
 	}
 
