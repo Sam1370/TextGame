@@ -1,6 +1,6 @@
 package sam1370.textgame;
 
-import sam1370.textgame.listeners.*;
+import sam1370.textgame.commands.*;
 import sam1370.textgame.rooms.*;
 
 
@@ -22,9 +22,9 @@ public class Program {
 		registerCommand(new Fullscreen());
 		registerCommand(new Look());
 		
-		Default defRm = new Default();
-		registerRoom(defRm);
-		Game.setRoom(defRm);
+		Default def = new Default();
+		registerRoom(def);
+		Player.setRoom(def);
 	}
 	
 	private void registerRoom(Room room) {

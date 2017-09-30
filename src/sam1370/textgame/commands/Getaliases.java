@@ -1,4 +1,4 @@
-package sam1370.textgame.listeners;
+package sam1370.textgame.commands;
 
 import sam1370.textgame.*;
 
@@ -6,7 +6,7 @@ public class Getaliases implements Command {
 
 	@Override
 	public String getCommand() {
-		return "getaliases";
+		return "alias";
 	}
 
 	@Override
@@ -16,7 +16,7 @@ public class Getaliases implements Command {
 
 	@Override
 	public String[] getAliases() {
-		String[] aliases = { "galiases", "getalias", "getaliase", "getaliass" };
+		String[] aliases = { "getaliases", "aliases", "galiases" };
 		return aliases;
 	}
 
@@ -25,7 +25,7 @@ public class Getaliases implements Command {
 		boolean unknownCommand = true;
 		for (Command cl : CommandInitiator.listeners) {
 			if (CommandInitiator.identifyCommand(args[0], cl)) {
-				Utils.print("Aliases of " + getCommand() + ": ");
+				Utils.print("Aliases of " + cl.getCommand() + ": ");
 				for (int i = 0; i < cl.getAliases().length; i++) {
 					String alias = cl.getAliases()[i];
 					unknownCommand = false;
@@ -42,7 +42,7 @@ public class Getaliases implements Command {
 
 	@Override
 	public String getUsage() {
-		return "getaliases <command>";
+		return getCommand() + " <command>";
 	}
 
 	@Override

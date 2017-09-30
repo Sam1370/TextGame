@@ -1,4 +1,4 @@
-package sam1370.textgame.listeners;
+package sam1370.textgame.commands;
 
 import sam1370.textgame.*;
 

@@ -1,4 +1,4 @@
-package sam1370.textgame.listeners;
+package sam1370.textgame.commands;
 
 import sam1370.textgame.*;
 
@@ -22,8 +22,8 @@ public class Look implements Command {
 
 	@Override
 	public void onCommand(String[] args) {
-		Utils.println(Game.currentRoom.getName());
-		Utils.println(Game.currentRoom.getLook());
+		Utils.println(Player.getRoom().getName());
+		Utils.println(Player.getRoom().getLook());
 	}
 
 	@Override
