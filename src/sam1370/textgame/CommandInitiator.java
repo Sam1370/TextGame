@@ -11,6 +11,9 @@ public class CommandInitiator {
 	public static void keyPressed(KeyEvent ke) {
 		if (ke.getKeyCode() == KeyEvent.VK_ENTER) {
 			String inputFieldText = GameWindow.getInputFieldText();
+			if (inputFieldText.length() == 2) {
+			    return;
+			}
 			Utils.println(inputFieldText);
 			StringBuilder fieldTextStrBuild = new StringBuilder(inputFieldText);
 			fieldTextStrBuild.delete(0, 2);

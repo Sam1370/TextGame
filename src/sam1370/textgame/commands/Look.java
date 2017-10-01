@@ -27,7 +27,7 @@ public class Look implements Command {
 	}
 
 	@Override
-	public String getUsage() {
+	public String getUsage() { 
 		return getCommand();
 	}
 
