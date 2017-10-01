@@ -2,7 +2,7 @@ package sam1370.textgame.commands;
 
 import sam1370.textgame.*;
 
-public class Exit implements Command {
+public class ExitCommand implements Command {
 
 	@Override
 	public String getCommand() {
