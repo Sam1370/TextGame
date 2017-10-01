@@ -24,7 +24,7 @@ public class Help implements Command {
 
 	@Override
 	public void onCommand(String[] args) {
-		Utils.println("--[ Help ]--");
+		Utils.println("Help - Commands");
 		Utils.println("Format: command | description");
 		Utils.println("Aliases are not listed here");
 		Utils.println();
@@ -32,6 +32,11 @@ public class Help implements Command {
 		for (Command cl : listeners) {
 			Utils.println(cl.getUsage() + " | " + cl.getDescription());
 		}
+		Utils.println("Help - Multi-commands");
+		Utils.println("Multi-commands contain multiple commands that do very similar things."
+				+ "that y");
+		Utils.println("Format: multi-command name | description | commands, separated by commas");
+		Utils.println();
 	}
 
 	@Override
