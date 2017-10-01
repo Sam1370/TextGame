@@ -22,8 +22,8 @@ public class Look implements Command {
 
 	@Override
 	public void onCommand(String[] args) {
-		Utils.println(Player.getRoom().getName());
-		Utils.println(Player.getRoom().getLook());
+		Utils.println(Player.getRoom().getTitle());
+		Utils.println(Player.getRoom().getDescription());
 	}
 
 	@Override

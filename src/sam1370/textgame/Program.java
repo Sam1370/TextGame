@@ -1,11 +1,10 @@
 package sam1370.textgame;
 
 import sam1370.textgame.commands.*;
-import sam1370.textgame.rooms.*;
-
 
 public class Program {
 	public static GameWindow g;
+
 	void start() {
 		g = new GameWindow();
 		registerListeners();
@@ -17,20 +16,19 @@ public class Program {
 	private void registerListeners() {
 		registerCommand(new Help());
 		registerCommand(new Info());
-		registerCommand(new Exit());
+		registerCommand(new ExitCommand());
 		registerCommand(new Getaliases());
 		registerCommand(new Fullscreen());
 		registerCommand(new Look());
 		
-		Default def = new Default();
-		registerRoom(def);
-		Player.setRoom(def);
+		Room defaultRoom = new Room("Default Room", "The world waits for your command.");
+		setRoom(defaultRoom);
 	}
 	
-	private void registerRoom(Room room) {
-		RoomInitiator.registerRoom(room);
+	private void setRoom(Room r) {
+		Player.setRoom(r);
 	}
-
+	
 	private void registerCommand(Command listener) {
 		CommandInitiator.registerListener(listener);
 	}

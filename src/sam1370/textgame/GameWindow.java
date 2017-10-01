@@ -68,13 +68,15 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 				}
 				CommandInitiator.keyPressed(ke);
 			}
-			
-			@Override
-			public void keyReleased(KeyEvent ke) {}
 
 			@Override
-			public void keyTyped(KeyEvent ke) {}
-			
+			public void keyReleased(KeyEvent ke) {
+			}
+
+			@Override
+			public void keyTyped(KeyEvent ke) {
+			}
+
 		});
 
 		if (font != null) {
@@ -113,7 +115,7 @@ public class GameWindow extends WindowAdapter implements WindowListener, ActionL
 		reader2.setDaemon(true);
 		reader2.start();
 	}
-	
+
 	public static void fullscreen() {
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice gd = ge.getDefaultScreenDevice();
