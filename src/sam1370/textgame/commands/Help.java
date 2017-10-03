@@ -28,8 +28,8 @@ public class Help implements Command {
 		Utils.println("Format: command | description");
 		Utils.println("Aliases are not listed here");
 		Utils.println();
-		List<Command> listeners = CommandInitiator.listeners;
-		for (Command cl : listeners) {
+		List<Command> commands = CommandInitiator.commands;
+		for (Command cl : commands) {
 			Utils.println(cl.getUsage() + " | " + cl.getDescription());
 		}
 		Utils.println("Help - Multi-commands");
@@ -37,6 +37,10 @@ public class Help implements Command {
 				+ "that y");
 		Utils.println("Format: multi-command name | description | commands, separated by commas");
 		Utils.println();
+		List<MultiCommand> multiCommands = CommandInitiator.multiCommands;
+		for (MultiCommand mcl : multiCommands) {
+		    Utils.println(mcl.getName() + " | " + mcl.getDescription() + " | " + mcl.getUsage());
+		}
 	}
 
 	@Override

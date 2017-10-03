@@ -20,6 +20,9 @@ public class Program {
 		registerCommand(new Getaliases());
 		registerCommand(new Fullscreen());
 		registerCommand(new Look());
+		registerCommand(new Ock());
+		
+		registerMultiCommand(new Direction());
 		
 		Room defaultRoom = new Room("Default Room", "The world waits for your command.");
 		setRoom(defaultRoom);
@@ -29,8 +32,12 @@ public class Program {
 		Player.setRoom(r);
 	}
 	
-	private void registerCommand(Command listener) {
-		CommandInitiator.registerListener(listener);
+	private void registerMultiCommand(MultiCommand multiCommand) {
+	    CommandInitiator.registerMultiCommand(multiCommand);
+	}
+	
+	private void registerCommand(Command command) {
+		CommandInitiator.registerCommand(command);
 	}
 
 	private void main() {

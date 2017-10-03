@@ -23,7 +23,7 @@ public class Getaliases implements Command {
 	@Override
 	public void onCommand(String[] args) {
 		boolean unknownCommand = true;
-		for (Command cl : CommandInitiator.listeners) {
+		for (Command cl : CommandInitiator.commands) {
 			if (CommandInitiator.identifyCommand(args[0], cl)) {
 				Utils.print("Aliases of " + cl.getCommand() + ": ");
 				for (int i = 0; i < cl.getAliases().length; i++) {

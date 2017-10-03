@@ -6,7 +6,8 @@ public class Direction implements MultiCommand {
 
 	@Override
 	public String[] getCommands() {
-		return null;
+	    	String[] commands = Utils.concat(Utils.shiftArray(Exit.dirName), Utils.shiftArray(Exit.shortDirName));
+		return commands;
 	}
 
 	@Override
@@ -16,19 +17,16 @@ public class Direction implements MultiCommand {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return "Enter in one of the cardinal directions to go somewhere.";
 	}
 
 	@Override
 	public Integer argsNeeded() {
-		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 	@Override
-	public void onCommand(String[] args) {
-		// TODO Auto-generated method stub
+	public void onCommand(String multiCmdName, String[] args) {
 		
 	}
 
